@@ -23,11 +23,13 @@ object KafkaHomework {
 
     // Create the KafkaConsumer
     //TODO: Write in a comment what these lines are doing. What are the properties necessary to instantiate a consumer?
+    //
     val properties = getProperties(BootstrapServer)
     val consumer: KafkaConsumer[String, String] = new KafkaConsumer[String, String](properties)
 
 
     //TODO: What does this line mean? Write your answer in a comment below
+    // It tells the consumer to subscribe to (read from) this topic
     consumer.subscribe(Arrays.asList(Topic))
 
     while (true) {

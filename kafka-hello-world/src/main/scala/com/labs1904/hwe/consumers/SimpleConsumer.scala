@@ -8,18 +8,13 @@ import org.apache.kafka.common.serialization.StringDeserializer
 import java.time.Duration
 import java.util.{Arrays, Properties, UUID}
 
-case class RawUser(id: Int, name: String, email: String)
-
-
 object SimpleConsumer {
-
-  val BootstrapServer : String = "b-2-public.hwe-kafka-cluster.l384po.c8.kafka.us-west-2.amazonaws.com:9196,b-1-public.hwe-kafka-cluster.l384po.c8.kafka.us-west-2.amazonaws.com:9196,b-3-public.hwe-kafka-cluster.l384po.c8.kafka.us-west-2.amazonaws.com:9196"
-  val Topic: String = "question-1-output"
-  val username: String = "hwe"
-  val password: String = "1904labs"
-
+  val BootstrapServer : String = "CHANGEME"
+  val Topic: String = "question-1"
+  val username: String = "CHANGEME"
+  val password: String = "CHANGEME"
   //Use this for Windows
-  val trustStore: String = "C:\\Users\\luisa\\Desktop\\AppDE\\streaming-data-pipeline\\kafka-hello-world\\src\\main\\resources\\kafka.client.truststore.jks"
+  val trustStore: String = "src\\main\\resources\\kafka.client.truststore.jks"
   //Use this for Mac
   //val trustStore: String = "src/main/resources/kafka.client.truststore.jks"
 

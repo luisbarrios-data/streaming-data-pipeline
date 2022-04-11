@@ -10,7 +10,7 @@ import java.util.{Arrays, Properties, UUID}
 
 object ConnectionTest {
   // TODO: this is configured to use kafka running locally, change it to your cluster
-  val BootstrapServer : String = "b-2-public.hwe-kafka-cluster.l384po.c8.kafka.us-west-2.amazonaws.com:9196,b-1-public.hwe-kafka-cluster.l384po.c8.kafka.us-west-2.amazonaws.com:9196,b-3-public.hwe-kafka-cluster.l384po.c8.kafka.us-west-2.amazonaws.com:9196"
+  val BootstrapServer : String = "Change-me / you must have a server"
   val Topic: String = "hwe-kafka-connection-test"
   val username: String = "hwe"
   val password: String = "1904labs"

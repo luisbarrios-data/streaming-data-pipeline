@@ -14,7 +14,7 @@ import java.util.{Arrays, Properties, UUID}
 case class EnrichedUser(id: Int, name: String, email: String, numberAsWord: String, hweDeveloper: String)
 
 object HweConsumer {
-  val BootstrapServer : String = "b-2-public.hwe-kafka-cluster.l384po.c8.kafka.us-west-2.amazonaws.com:9196,b-1-public.hwe-kafka-cluster.l384po.c8.kafka.us-west-2.amazonaws.com:9196,b-3-public.hwe-kafka-cluster.l384po.c8.kafka.us-west-2.amazonaws.com:9196"
+  val BootstrapServer : String = "Change me - Must have a server"
   val consumerTopic: String = "question-1"
   val producerTopic: String = "question-1-output"
   val username: String = "hwe"

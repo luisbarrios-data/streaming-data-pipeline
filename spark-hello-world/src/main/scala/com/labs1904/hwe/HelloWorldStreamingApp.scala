@@ -8,6 +8,11 @@ import org.apache.spark.sql.streaming.{OutputMode, StreamingQuery, Trigger}
 import java.io.File
 import scala.util.Random
 
+//Challenge 3: Run the app and stream every 5 seconds. The data comes from a random sentence.
+// It runs locally because it is easier for testing
+
+
+
 /**
  * Spark Structured Streaming app
  */

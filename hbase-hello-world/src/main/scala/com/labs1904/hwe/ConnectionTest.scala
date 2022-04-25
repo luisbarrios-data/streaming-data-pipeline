@@ -1,7 +1,7 @@
 package com.labs1904.hwe
 
 import org.apache.hadoop.hbase.{HBaseConfiguration, TableName}
-import org.apache.hadoop.hbase.client.{Connection, ConnectionFactory, Get, Put}
+import org.apache.hadoop.hbase.client.{Connection, ConnectionFactory, Get}
 import org.apache.hadoop.hbase.util.Bytes
 import org.apache.logging.log4j.{LogManager, Logger}
 
@@ -15,30 +15,13 @@ object ConnectionTest {
     try {
       logger.debug("Starting app")
       val conf = HBaseConfiguration.create()
-      conf.set("hbase.zookeeper.quorum", "hbase02.hourswith.expert:2181")
+      conf.set("hbase.zookeeper.quorum", "changeMe")
       connection = ConnectionFactory.createConnection(conf)
-      val table = connection.getTable(TableName.valueOf("lbarrios:users"))
-      val get = new Get(Bytes.toBytes("10000001"))
+      val table = connection.getTable(TableName.valueOf("hwe:connection_test"))
+      val get = new Get(Bytes.toBytes("rowkey"))
       val result = table.get(get)
-      val message = Bytes.toString(result.getValue(Bytes.toBytes("f1"), Bytes.toBytes("mail")))
-
-
-      val put = new Put(Bytes.toBytes("99"))
-
-
-      put.addColumn(Bytes.toBytes("f1"), Bytes.toBytes("username"), Bytes.toBytes("DE-HWE"))
-      put.addColumn(Bytes.toBytes("f1"), Bytes.toBytes("name"), Bytes.toBytes("The panther"))
-      put.addColumn(Bytes.toBytes("f1"), Bytes.toBytes("sex"), Bytes.toBytes("F"))
-      put.addColumn(Bytes.toBytes("f1"), Bytes.toBytes("favorite_color"), Bytes.toBytes("Pink"))
-
-      //val writeUser = new Put (Bytes.toBytes("99"))
-      //writeUser.addColumn(Bytes.toBytes("f1"), Bytes.toBytes(
-
-
-      //table.put(message)
+      val message = Bytes.toString(result.getFamilyMap(Bytes.toBytes("f1")).get(Bytes.toBytes("test")))
       logger.debug(message)
-      //logger.debug(put)
-
 
     } catch {
       case e: Exception => logger.error("Error in main", e)
